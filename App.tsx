@@ -10,7 +10,7 @@ export default function App() {
     <SafeAreaProvider>
       <ApolloProvider client={client}>
         <AppProvider>
-          <SafeAreaView style={styles.container} edges={["top", "bottom"]}>
+          <SafeAreaView style={styles.container}>
             <CharacterList />
           </SafeAreaView>
         </AppProvider>

@@ -12,8 +12,6 @@ export const GET_CHARACTERS_PAGINATED = gql`
         id
         name
         image
-        status
-        species
       }
     }
   }
