@@ -15,8 +15,6 @@ type Character = {
   id: string;
   name: string;
   image: string;
-  status?: string;
-  species?: string;
 };
 
 type CharactersData = {
@@ -106,30 +104,6 @@ export default function CharacterList() {
             
             <View style={styles.content}>
               <Text style={styles.name} numberOfLines={1}>{item.name}</Text>
-              
-              <View style={styles.badgesContainer}>
-                {item.status && (
-                  <View style={[
-                    styles.statusBadge,
-                    item.status === "Alive" && styles.statusBadgeAlive,
-                    item.status === "Dead" && styles.statusBadgeDead,
-                    item.status === "unknown" && styles.statusBadgeUnknown,
-                  ]}>
-                    <View style={[
-                      styles.statusDot,
-                      item.status === "Alive" && styles.statusDotAlive,
-                      item.status === "Dead" && styles.statusDotDead,
-                      item.status === "unknown" && styles.statusDotUnknown,
-                    ]} />
-                    <Text style={styles.statusText}>{item.status}</Text>
-                  </View>
-                )}
-                {item.species && (
-                  <View style={styles.speciesBadge}>
-                    <Text style={styles.speciesText}>{item.species}</Text>
-                  </View>
-                )}
-              </View>
             </View>
           </View>
         )}
@@ -240,73 +214,6 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     marginBottom: 12,
     letterSpacing: 0.3,
-  },
-  
-  badgesContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-  },
-  
-  statusBadge: {
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-    backgroundColor: "#2a2f4a",
-  },
-  
-  statusBadgeAlive: {
-    backgroundColor: "rgba(46, 213, 115, 0.2)",
-  },
-  
-  statusBadgeDead: {
-    backgroundColor: "rgba(231, 76, 60, 0.2)",
-  },
-  
-  statusBadgeUnknown: {
-    backgroundColor: "rgba(149, 165, 166, 0.2)",
-  },
-  
-  statusDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    marginRight: 6,
-    backgroundColor: "#8b9dc3",
-  },
-  
-  statusDotAlive: {
-    backgroundColor: "#2ed573",
-  },
-  
-  statusDotDead: {
-    backgroundColor: "#e74c3c",
-  },
-  
-  statusDotUnknown: {
-    backgroundColor: "#95a5a6",
-  },
-  
-  statusText: {
-    fontSize: 13,
-    fontWeight: "600",
-    color: "#ffffff",
-    textTransform: "capitalize",
-  },
-  
-  speciesBadge: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 20,
-    backgroundColor: "rgba(138, 157, 195, 0.2)",
-  },
-  
-  speciesText: {
-    fontSize: 13,
-    fontWeight: "500",
-    color: "#8b9dc3",
   },
   
   pagination: {
